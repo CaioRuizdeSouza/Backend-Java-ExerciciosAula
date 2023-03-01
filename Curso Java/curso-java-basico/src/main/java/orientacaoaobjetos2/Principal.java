@@ -2,24 +2,38 @@ package orientacaoaobjetos2;
 
 public class Principal {
     public static void main(String[] args) {
-        Carro2 bmw = new Carro2();
+        /*Carro2 bmw = new Carro2();
         bmw.setMarca("BMW");
         bmw.setModelo("M3");
         bmw.setQuilometrosPorLitro(7.5);
         //bmw.taxaAceleracao = 50;
-        bmw.setVelocidadeMaxima(280);
+       // bmw.setVelocidadeMaxima(280);
         
-        Carro2 mercedes = new Carro2("Mercedes", "c180");
+        Carro2 mercedes = new Carro2("Mercedes", "c180");*/
         
         BMW bmwDois = new BMW ();
         Tesla tesla = new Tesla();
         tesla.isDirigeSozinho();
+        bmwDois.piscarAlerta();
         
+        
+        BMW bmwtres = null;
+        
+        bmwtres.acelerar();
+        
+        try{
+            bmwDois.setVelocidadeMaxima(-10);
+        } catch(NegocioException e) {
+            System.out.println(e);
+        }finally {
+            System.out.println("passou aqui");
+        }
+       
         Carro2 teslaDois = new Tesla();
         ((Tesla)teslaDois).setDirigeSozinho(true);
         System.out.println(((Tesla)teslaDois).isDirigeSozinho());
-        
-        Carro2[] carros = new Carro2[] {bmw, bmwDois, tesla, teslaDois};
+        teslaDois.piscarAlerta();
+        Carro2[] carros = new Carro2[] {bmwDois, tesla, teslaDois};
         
         for(Carro2 carro : carros) {
             if(carro instanceof Tesla){
@@ -35,7 +49,6 @@ public class Principal {
         
         System.out.println(mercedes.getMarca());
         System.out.println(mercedes.getModelo());
-        
         System.out.println(bmw.getMarca());
         System.out.println(bmw.getModelo());
         System.out.println(bmw.getQuilometrosPorLitro());

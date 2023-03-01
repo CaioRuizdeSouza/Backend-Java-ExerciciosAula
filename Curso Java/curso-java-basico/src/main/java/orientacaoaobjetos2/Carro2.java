@@ -1,6 +1,6 @@
 package orientacaoaobjetos2;
 
-public class Carro2 {
+public abstract class Carro2 {
     
     /* Modificadores de acesso
     default => não tem uma palavra chave (palvara reservada). 
@@ -35,6 +35,8 @@ public class Carro2 {
         System.out.println("Freando.....");
     }
     
+    public abstract void piscarAlerta();
+    
     public void virar() {
         System.out.println("Virando.......");
     }
@@ -68,9 +70,9 @@ public class Carro2 {
         return velocidadeMaxima;
     }
 
-    public void setVelocidadeMaxima(int velocidadeMaxima) {
+    public void setVelocidadeMaxima(int velocidadeMaxima) throws NegocioException{
         if(velocidadeMaxima < 0){
-            System.out.println("Valor é inválido");
+            throw new NegocioException ("Valor é inválido");
         }else{
         this.velocidadeMaxima = velocidadeMaxima;
         }
