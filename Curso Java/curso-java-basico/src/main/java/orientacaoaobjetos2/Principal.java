@@ -1,15 +1,22 @@
 package orientacaoaobjetos2;
 
 public class Principal {
+    static int valor = 10;
+    
+    static void print(){
+        System.out.println(valor);
+    }
+    
     public static void main(String[] args) {
-        /*Carro2 bmw = new Carro2();
+        valor = 10;
+        Carro2 bmw = new Carro2();
         bmw.setMarca("BMW");
         bmw.setModelo("M3");
         bmw.setQuilometrosPorLitro(7.5);
         //bmw.taxaAceleracao = 50;
        // bmw.setVelocidadeMaxima(280);
         
-        Carro2 mercedes = new Carro2("Mercedes", "c180");*/
+        Carro2 mercedes = new Carro2("Mercedes", "c180");
         
         BMW bmwDois = new BMW ();
         Tesla tesla = new Tesla();
@@ -36,10 +43,15 @@ public class Principal {
         Carro2[] carros = new Carro2[] {bmwDois, tesla, teslaDois};
         
         for(Carro2 carro : carros) {
+            if(Constantes.MARCA_FAMOSA.equals(carro.getMarca())){
+                System.out.println("Carro de marca famosa");
+            }
             if(carro instanceof Tesla){
                 System.out.println(((Tesla)carro).isDirigeSozinho());
             }
         }
+        
+        Calcular.soma(0, 0)
         
         teslaDois.calcularTaxaAceleracao(100.50, 10);
         bmwDois.calcularTaxaAceleracao(100.50, 10);

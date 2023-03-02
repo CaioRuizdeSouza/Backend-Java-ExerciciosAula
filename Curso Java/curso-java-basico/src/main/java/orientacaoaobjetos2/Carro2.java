@@ -11,7 +11,6 @@ public abstract class Carro2 {
     procted => Acessível própria casse, classe mesmo pacote, suclasses(extends).
     */
     
-    
     private String marca;
     private String modelo;
     private int velocidadeMaxima;
